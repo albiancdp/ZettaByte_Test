@@ -1,4 +1,5 @@
 import commentModel from '../models/comment';
+import mongoose from 'mongoose';
 
 const sortView = {
   createdAt: { createdAt: -1 },
@@ -42,7 +43,7 @@ const listComment = async (req) => {
         $match: {
           $and: [
             { isActive: true },
-            { articelId: articelId },
+            { articelId: mongoose.Types.ObjectId(articelId) },
             {
               $or: [
                 { 'name': { $regex: new RegExp(search), $options: 'i' } },

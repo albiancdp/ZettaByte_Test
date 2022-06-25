@@ -8,10 +8,10 @@ import configs from '../../configs/global_config';
 const router = express.Router();
 
 router.route(configs.routeBase + '/comment/create')
-  .post(indexValidator.list_validator(), indexController.articelController.createArticel);
+  .post(indexValidator.list_validator(), indexController.commentController.createComment);
 
 router.route(configs.routeBase + '/comment/list')
-  .get(indexValidator.list_validator(), indexController.articelController.listArticel);
+  .get(indexValidator.list_validator(), indexController.commentController.listComment);
 
 router.route(configs.routeBase + '/comment/read')
   .get(indexValidator.list_validator(), indexController.articelController.readArticel);

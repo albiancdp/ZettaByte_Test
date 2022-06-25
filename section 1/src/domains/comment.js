@@ -83,7 +83,7 @@ const listComment = async (req) => {
     ]).then(result => {
       response.docs = result[0].data;
       response.totalItem = result[0].total[0];
-      response.totalPage = Math.ceil(response.totalItem / limit);
+      response.totalPage = Math.ceil(response.totalItem / limit) || 0;
       response.startItem = (page - 1) * limit;
       response.endItem = response.startItem + result[0].data.length;
       response.nextPage = response.page < response.totalPage ? true : false;

@@ -13,11 +13,14 @@ router.route(configs.routeBase + '/comment/create')
 router.route(configs.routeBase + '/comment/list')
   .get(indexValidator.list_validator(), indexController.commentController.listComment);
 
-router.route(configs.routeBase + '/comment/read')
-  .get(indexValidator.list_validator(), indexController.articelController.readArticel);
-
 router.route(configs.routeBase + '/comment/')
-  .put(indexValidator.list_validator(), indexController.articelController.updateArticel)
-  .delete(indexValidator.list_validator(), indexController.articelController.deleteArticel);
+  .put(indexValidator.comment_update_validator(), indexController.commentController.updateComment);
+
+router.route(configs.routeBase + '/comment/:id')
+  .delete(indexValidator.id_validator(), indexController.commentController.deleteComment);
+
+router.route(configs.routeBase + '/comment/:id')
+  .get(indexValidator.id_validator(), indexController.commentController.readComment);
+
 
 export default router;

@@ -11,8 +11,8 @@ const deleteComment = async (req, res) => {
       return responseHelper.errorValidate(res, valid);
     };
     const resComment = await indexDomain.commentDomain.deleteComment(req.params.id);
-    if (!resComment) return responseHelper.notFound(res, 'Articel Not Found');
-    return responseHelper.success(res, 'Delete Articel', resComment);
+    if (!resComment) return responseHelper.notFound(res, 'Comment Not Found');
+    return responseHelper.success(res, 'Delete Comment', resComment);
   }
   catch (err) {
     return responseHelper.errorService(res, err.message);

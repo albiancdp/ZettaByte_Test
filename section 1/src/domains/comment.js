@@ -98,7 +98,7 @@ const listComment = async (req) => {
 
 const readComment = async (commentId) => {
   return new Promise((resolve, reject) => {
-    commentId.findById(commentId)
+    commentModel.findById(commentId)
       .then(result => {
         if (!result) {
           resolve(false);

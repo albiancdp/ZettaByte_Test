@@ -12,7 +12,7 @@ const listComment = async (req, res) => {
     };
     const resComment = await indexDomain.commentDomain.listComment(req);
     if (!resComment) return responseHelper.errorValidate(res, { articelId: 'Please Input articelId' });
-    return responseHelper.success(res, 'Get List Articel', resComment);
+    return responseHelper.success(res, 'Get List Comment', resComment);
   }
   catch (err) {
     return responseHelper.errorService(res, err.message);

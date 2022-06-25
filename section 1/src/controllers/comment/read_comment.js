@@ -12,7 +12,7 @@ const readComment = async (req, res) => {
     };
     const resComment = await indexDomain.commentDomain.readComment(req.params.id);
     if (!resComment) return responseHelper.notFound(res, 'Comment Not Found');
-    return responseHelper.success(res, 'Detail Articel', resComment);
+    return responseHelper.success(res, 'Detail Comment', resComment);
   }
   catch (err) {
     return responseHelper.errorService(res, err.message);

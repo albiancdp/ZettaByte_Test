@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const tableSchema = new Schema({
   articelId: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: 'articel',
     required: true,
     lowercase: true,
     trim: true,

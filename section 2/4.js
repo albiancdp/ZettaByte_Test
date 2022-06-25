@@ -1,18 +1,41 @@
 /**
  * Direction:
- * Find all fields that have different value & must can detect all field dynamically
+ * Convert this data of profit per days from object into array of objects
  *
  * Expected Result:
- * ['firstName', 'lastName']
- *
+ * [ { date: '12/25/21', profit: 400000 },
+ *   { date: '12/26/21', profit: 200000 },
+ *   { date: '12/27/21', profit: 450000 },
+ *   { date: '12/28/21', profit: 500000 },
+ *   { date: '12/29/21', profit: 420000 },
+ *   { date: '12/30/21', profit: 420000 },
+ *   { date: '12/31/21', profit: 400000 } ]
  */
-const data = [
-    { firstName: 'Adi', lastName: 'Nugroho', age: 25 },
-    { firstName: 'Deddy', lastName: 'Dores', age: 25 },
-];
 
-function result(data) {
-    // your code here
+const reports = {
+    '12/25/21': 400000,
+    '12/26/21': 200000,
+    '12/27/21': 450000,
+    '12/28/21': 500000,
+    '12/29/21': 420000,
+    '12/30/21': 420000,
+    '12/31/21': 700000
 }
 
-console.log(result(data));
+function result(reports) {
+    // Your Code Here
+    let result = [];
+    const arrayName = Object.keys(reports);
+    const ArrayNameLength = arrayName.length;
+
+    for (let i = 0; i < ArrayNameLength; i++) {
+        const nameObj = arrayName[i];
+        result.push({
+            date: nameObj,
+            profit: reports[nameObj]
+        });
+    }
+    return result;
+}
+
+console.log(result(reports));

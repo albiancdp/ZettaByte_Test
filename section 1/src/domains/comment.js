@@ -2,8 +2,7 @@ import commentModel from '../models/comment';
 
 const sortView = {
   createdAt: { createdAt: -1 },
-  title: { title: -1 },
-  creator: { creator: -1 },
+  name: { title: -1 },
 };
 
 const createComment = async (data) => {
@@ -43,9 +42,8 @@ const listComment = async (req) => {
             { isActive: true },
             {
               $or: [
-                { 'title': { $regex: new RegExp(search), $options: 'i' } },
-                { 'creator': { $regex: new RegExp(search), $options: 'i' } },
-                { 'tag': { $regex: new RegExp(search), $options: 'i' } },
+                { 'name': { $regex: new RegExp(search), $options: 'i' } },
+                { 'comment': { $regex: new RegExp(search), $options: 'i' } },
               ]
             }
           ],

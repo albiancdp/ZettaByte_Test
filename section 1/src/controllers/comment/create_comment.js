@@ -12,7 +12,7 @@ const createComment = async (req, res) => {
     };
     const resComment = await indexDomain.commentDomain.createComment(req.body);
     if(!resComment.status) return responseHelper.errorValidate(res, resComment.notValid);
-    return responseHelper.success(res, 'Create Comment', resComment);
+    return responseHelper.success(res, 'Create Comment', resComment.data);
   }
   catch (err) {
     return responseHelper.errorService(res, err.message);

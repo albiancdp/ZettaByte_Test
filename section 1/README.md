@@ -30,7 +30,7 @@ This section should list any major frameworks/libraries used to project.
 
 ### Description Response
 
-## Response Code
+#### Response Code
 Code | Description |
 --- | --- |
 200 | Success |
@@ -39,7 +39,7 @@ Code | Description |
 404 | Not Found |
 500 | Internal Server Error |
 
-## Response Error Code
+#### Response Error Code
 Code | Description |
 --- | --- |
 validate_error | Validation Error |

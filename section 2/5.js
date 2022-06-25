@@ -44,6 +44,7 @@ function result(students, groups) {
     for (let i = 0; i < groups; i++) {
         result.push(newArrayStudent.slice(i * lengthGroup, (i + 1) * lengthGroup));
     }
+    
     return result;
 }
 

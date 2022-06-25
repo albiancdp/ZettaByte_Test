@@ -14,6 +14,11 @@ let numbersTwo = [1, 2, 3, 5, 9]
 
 function result(originalData, numbersOne, numbersTwo) {
     // Your Code Here
+    let deletedData = [];
+    let combineNumbers = numbersOne.concat(numbersTwo);
+    const sum = combineNumbers.reduce((result, index) => result + index, 0);
+    console.log(sum);
+    console.log(sum / 24);
 }
 
 console.log(result(originalData, numbersOne, numbersTwo));

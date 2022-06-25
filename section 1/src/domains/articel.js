@@ -47,7 +47,7 @@ const listArticel = async (req) => {
                 { 'creator': { $regex: new RegExp(search), $options: 'i' } },
                 { 'tag': { $regex: new RegExp(search), $options: 'i' } },
               ]
-            }
+            },
           ],
         }
       },

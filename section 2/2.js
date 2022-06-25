@@ -14,14 +14,11 @@ let numbersTwo = [1, 2, 3, 5, 9]
 
 function result(originalData, numbersOne, numbersTwo) {
     // Your Code Here
-    let result = [];
-
     const combineNumber = numbersOne.concat(numbersTwo);
     const deletedNumber = originalData.filter(item => !combineNumber.includes(item));
     const totalMerge = combineNumber.reduce((total, index) => total + index, 0);
     const totalDeleted = deletedNumber.reduce((total, index) => total + index, 0);
-    console.log(totalMerge, totalDeleted, totalMerge / totalDeleted);
-
+    const result = totalMerge / totalDeleted;
     return result;
 }
 

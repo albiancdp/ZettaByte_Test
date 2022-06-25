@@ -15,6 +15,10 @@ let numbers = {
 
 function result(numbers) {
     // Your Code Here
+    return {
+        a: numbers.b,
+        b: numbers.a
+    };
 }
 
 console.log(result(numbers));
